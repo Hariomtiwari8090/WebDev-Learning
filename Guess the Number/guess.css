@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+.container{
+    margin: 5px;
+    padding: 10px;
+    background-color: cornflowerblue;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.guess{
+    width: 450px;
+    background-color: wheat;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+h2{
+    margin-bottom: 10px;
+    text-align:center;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    height: 30px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+button{
+    height: 30px;
+    border-radius: 5px;
+}
