@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation App</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h2>Registration Form</h2>
+            <form id="for">
+                <label for="name">Name : </label>
+                <input type="text" id="name" required>
+                <div id="t"></div>
+
+                <label for="pass">Password : </label>
+                <input type="password" id="pass" required>
+                <div id="p"></div>
+
+                <label for="email">Email : </label>
+                <input type="email" id="email">
+                <div id="e"></div>
+                <button id="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const form=document.getElementById("for")
+        form.addEventListener("submit",()=>{
+            let name=document.getElementById("name")
+            let pass=document.getElementById("pass")
+            let email=document.getElementById("email")
+
+            let ename=document.getElementById("t")
+            let epass=document.getElementById("p")
+            let eemail=document.getElementById("e")
+
+            let valid = true;
+            ename.textContent = "";
+            epass.textContent = "";
+            eemail.textContent = "";
+
+
+            if(name.value.trim()===""){
+                ename.textContent="Name is required..."
+                valid=false
+            }
+
+            if(email.value.trim()===""){
+                eemail.textContent="Email is required..."
+                valid=false
+            } else if(!email.value.trim().includes("@")){
+                eemail.textContent="Email must contain '@'"
+                valid=false
+            }
+
+            if(pass.value.trim() === ""){
+                epass.textContent = "Password is required";
+                valid=false
+            } else if(pass.value.trim().length < 8){
+                epass.textContent = "Password must be at least 8 characters";
+                valid=false
+            }
+
+            if(valid){
+                alert("Form Submitted Successfully!");
+            }
+        })
+    </script>
+</body>
+</html>
